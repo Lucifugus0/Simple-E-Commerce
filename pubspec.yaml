@@ -1,0 +1,42 @@
+name: toko_db
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  font_awesome_flutter: ^10.1.0
+  cupertino_icons: ^1.0.6
+  sqflite: ^2.0.0+4
+  path: ^1.8.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/shirt1.png
+    - assets/images/shirt2.png
+    - assets/images/shirt3.png
+    - assets/images/shirt4.png
+    - assets/images/logo.jpg
+    - assets/images/electronic1.jpg
+    - assets/images/electronic2.jpg
+    - assets/images/keychain.jpg
+    - assets/images/keychain2.png
+    - assets/images/watch.jpg
+    - assets/images/profile.jpg
+    - assets/images/icon1.png
+    - assets/images/icon2.png
+    - assets/images/icon3.png
+    - assets/images/sticker.png
+    - assets/images/sticker1.png
