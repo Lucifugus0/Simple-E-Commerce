@@ -17,19 +17,20 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
   final DBHelper _dbHelper = DBHelper();
 
+
   void _login() async {
-    String username = _usernameController.text;
-    String password = _passwordController.text;
+    if (_usernameController.text.isEmpty || _passwordController.text.isEmpty) {
+      // Jika username atau password kosong, tampilkan pesan kesalahan
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Username and password cannot be empty')),
+      );
+      return; // Hentikan proses login
+    }
+
     final user = await _dbHelper.loginUser(
       _usernameController.text,
       _passwordController.text,
     );
-    if (username.isEmpty || password.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Username dan Password tidak boleh kosong')),
-      );
-      return; // Keluar dari fungsi jika ada input yang kosong
-    }
     if (user != null) {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => CategoryList(),
